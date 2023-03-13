@@ -1,0 +1,57 @@
+while (true)
+    {
+    Console.WriteLine("Введите,сколько элементов будет в массиве типа int: ");
+    int size_of_array = Convert.ToInt32(Console.ReadLine());
+    var a = new int[size_of_array];
+    Console.WriteLine("Введите непосредственно элементы массива: ");
+    for (int i = 0; i < a.Length; i++)
+    {
+        a[i] = Convert.ToInt32(Console.ReadLine());
+    }
+
+    int c = 0;
+    Console.WriteLine("Выберете, что вы хотите сделать с данным массивом: ");
+    Console.WriteLine("1) Array.Sort");
+    Console.WriteLine("2) Array.Resize");
+    Console.WriteLine("3) Array.Reverse");
+    Console.WriteLine("4) Array.BinarySearch");
+    Console.WriteLine("5) Array.Clear");
+    Console.WriteLine("6) Array.Copy");
+    int main = Convert.ToInt32(Console.ReadLine());
+        switch (main)
+        {
+        case 1:
+            Array.Sort(a);
+            break;
+        case 2:
+            Console.WriteLine("Введите новый размер массива: ");
+            int dim = Convert.ToInt32(Console.ReadLine());
+            Array.Resize(ref a, dim);
+            break;
+        case 3:
+            Array.Reverse(a);
+            break;
+        case 4:
+            Array.Sort(a);
+            Console.WriteLine("Input the value you want us tp find in a array");
+            int search = Convert.ToInt32(Console.ReadLine());
+            Array.BinarySearch(a,search);
+            break;
+        case 5:
+            Array.Clear(a);
+            break;
+        case 6:
+            Console.WriteLine("Введите длину, сколько будем копировать");
+            int l = Convert.ToInt32(Console.ReadLine());
+            int[] copy = new int[size_of_array];
+            Array.Copy(a, copy,l);
+            for (int i = 0; i < copy.Length; i++) Console.WriteLine(copy[i]);
+            break;
+    }
+    for (int i = 0; i < a.Length; i++) Console.WriteLine(a[i]);
+    Console.WriteLine();
+    Console.WriteLine("1) Вернуться к выборке");
+    Console.WriteLine("2) Завершить программу");
+    c = Convert.ToInt32(Console.ReadLine());
+    if (c == 2) break;
+}
