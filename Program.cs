@@ -1,78 +1,82 @@
-﻿//!!!как можно проще
-
-Teachers Kazich = new Teachers() 
-{ 
-    name = "Сергей", patronymic= "Геннадьевич", surname = "Казаков",experience = 5, 
-    disciplines = { "матан, дискретная математика","геометрия"}
-};
-Teachers Belim = new Teachers()
-{
-    name = "Светлана",
-    patronymic = "Юрьевна",
-    surname = "Белим",
-    experience = 10,
-    disciplines = { "алгебра, геометрия","теория чисел"}
-};
-Teachers Bread = new Teachers()
-{
-    surname = "Хлебникова",
-    experience = 15,
-    disciplines = { "прд" }
-};
-Special_Workers Svetka = new Special_Workers() { name = "Светлана", surname = "Техничкина", Gender = "female",experience=20};
-Special_Workers Misha = new Special_Workers() { name = "Михаил", surname = "Всяких-Дел-мастер", Gender = "male",experience=15};
-
-Student Igor = new Student
-{
-    name = "Игорь",
-    surname = "Арбузов",
-    zachetka = { { "матан", "5" }, { "алгебра", "5" }, { "прд", "зач" } }, 
-   Course=4
-};
-Student Irka = new Student
-{
-    name = "Ирина",
-    surname = "Ельник",
-    zachetka = { { "дм", "не сдан" }, { "алгебра", "3" }, { "прд", "незач" } },
-    dolgi = { "прд"},Course=3
-};
-Student Ivan = new Student
-{
-    name = "Иван",
-    surname = "Селезин",
-    zachetka = { { "матан", "не сдано" }, { "алгебра", "не сдано" }, { "прд", "зач" } },
-    dolgi = {"матан","геометрия","алгебра"},Course = 2
-};
 
 
 
 
-Rulers Anton = new Rulers {name = "Антон", surname = "Депутатов",Gender = "male",post = "ректор",experience=10};
-Rulers Olga = new Rulers { name = "Ольга", surname = "Майорова", Gender = "female", post = "проректор",experience=5};
+//!!!как можно проще
+
+// Teachers Kazich = new Teachers() 
+// { 
+//     name = "Сергей", patronymic= "Геннадьевич", surname = "Казаков",experience = 5, 
+//     disciplines = { "матан, дискретная математика","геометрия"}
+// };
+// Teachers Belim = new Teachers()
+// {
+//     name = "Светлана",
+//     patronymic = "Юрьевна",
+//     surname = "Белим",
+//     experience = 10,
+//     disciplines = { "алгебра, геометрия","теория чисел"}
+// };
+// Teachers Bread = new Teachers()
+// {
+//     surname = "Хлебникова",
+//     experience = 15,
+//     disciplines = { "прд" }
+// };
+// Special_Workers Svetka = new Special_Workers() { name = "Светлана", surname = "Техничкина", Gender = "female",experience=20};
+// Special_Workers Misha = new Special_Workers() { name = "Михаил", surname = "Всяких-Дел-мастер", Gender = "male",experience=15};
+
+// Student Igor = new Student
+// {
+//     name = "Игорь",
+//     surname = "Арбузов",
+//     zachetka = { { "матан", "5" }, { "алгебра", "5" }, { "прд", "зач" } }, 
+//    Course=4
+// };
+// Student Irka = new Student
+// {
+//     name = "Ирина",
+//     surname = "Ельник",
+//     zachetka = { { "дм", "не сдан" }, { "алгебра", "3" }, { "прд", "незач" } },
+//     dolgi = { "прд"},Course=3
+// };
+// Student Ivan = new Student
+// {
+//     name = "Иван",
+//     surname = "Селезин",
+//     zachetka = { { "матан", "не сдано" }, { "алгебра", "не сдано" }, { "прд", "зач" } },
+//     dolgi = {"матан","геометрия","алгебра"},Course = 2
+// };
 
 
 
-Rulers.all.Add(Anton.post + " " + Anton.name, new List<string> 
-{ "поднять зарплаты и стипендии на 50%", "Не входить в здание университета с 3 по 5 ноября" });
-Rulers.students.Add(Anton.post + " " + Anton.name, new List<string>
-{
-    "Приказ О зачислении студентов первого курса очной формы обучения на бюджет",
-    "Приказ О зачислении студентов первого курса очной формы обучения на коммерческой"
-});
-Rulers.teachers.Add(Anton.post + " " + Anton.name, new List<string>
-{
-    "Утвердить и вести в действие с 1 сентября 2020 г. 'Порядок установления выплат " +
-        "стимулирующего характера профессорско-преподавательскому составу Университета по " +
-        "результатам оценки эффективности исполнения ими трудовых обязанностей в рамках эффективного контракта'"
-});
-Rulers.students.Add(Olga.post + " " + Olga.name, new List<string>
-{
-    "Ребята! большая просьба завтра прийти всем на мероприятие на уровне факультета"
-});
-Rulers.teachers.Add(Olga.post + " " + Olga.name, new List<string>
-{
-    "Всему профессорско-преподавательскому составу завтра явиться в актовом зале в 18:30"
-});
+
+// Rulers Anton = new Rulers {name = "Антон", surname = "Депутатов",Gender = "male",post = "ректор",experience=10};
+// Rulers Olga = new Rulers { name = "Ольга", surname = "Майорова", Gender = "female", post = "проректор",experience=5};
+
+
+
+// Rulers.all.Add(Anton.post + " " + Anton.name, new List<string> 
+// { "поднять зарплаты и стипендии на 50%", "Не входить в здание университета с 3 по 5 ноября" });
+// Rulers.students.Add(Anton.post + " " + Anton.name, new List<string>
+// {
+//     "Приказ О зачислении студентов первого курса очной формы обучения на бюджет",
+//     "Приказ О зачислении студентов первого курса очной формы обучения на коммерческой"
+// });
+// Rulers.teachers.Add(Anton.post + " " + Anton.name, new List<string>
+// {
+//     "Утвердить и вести в действие с 1 сентября 2020 г. 'Порядок установления выплат " +
+//         "стимулирующего характера профессорско-преподавательскому составу Университета по " +
+//         "результатам оценки эффективности исполнения ими трудовых обязанностей в рамках эффективного контракта'"
+// });
+// Rulers.students.Add(Olga.post + " " + Olga.name, new List<string>
+// {
+//     "Ребята! большая просьба завтра прийти всем на мероприятие на уровне факультета"
+// });
+// Rulers.teachers.Add(Olga.post + " " + Olga.name, new List<string>
+// {
+//     "Всему профессорско-преподавательскому составу завтра явиться в актовом зале в 18:30"
+// });
 
 
 
@@ -80,106 +84,106 @@ Rulers.teachers.Add(Olga.post + " " + Olga.name, new List<string>
 
 
 
-Belim.promisers.Add(Ivan.surname, new List<string> { "геометрия", "алгебра" });
-Kazich.promisers.Add(Ivan.surname, new List<string> { "матан"} );
-Bread.promisers.Add(Irka.surname, new List<string> { "прд" });
+// Belim.promisers.Add(Ivan.surname, new List<string> { "геометрия", "алгебра" });
+// Kazich.promisers.Add(Ivan.surname, new List<string> { "матан"} );
+// Bread.promisers.Add(Irka.surname, new List<string> { "прд" });
 
 
-Console.WriteLine($"Наши студенты: {Ivan.surname},{Igor.surname}");
-Console.WriteLine($"Наши преподаватели: {Belim.surname},{Kazich.surname}");
-Console.WriteLine($"Спец. работники университета: {Svetka.surname},{Misha.surname}");
-Console.WriteLine($"Управляющий состав университета: {Anton.surname},{Olga.surname}");
+// Console.WriteLine($"Наши студенты: {Ivan.surname},{Igor.surname}");
+// Console.WriteLine($"Наши преподаватели: {Belim.surname},{Kazich.surname}");
+// Console.WriteLine($"Спец. работники университета: {Svetka.surname},{Misha.surname}");
+// Console.WriteLine($"Управляющий состав университета: {Anton.surname},{Olga.surname}");
 
 
-var s = new Student[] { Igor, Irka, Ivan }; 
-var p = new Teachers[] { Bread, Belim, Kazich };
-var workers = new Human[] { Svetka, Misha,Bread,Belim,Kazich };
-while (true)
-{
-    Console.WriteLine("Пожалуйсте, выберете, что вас интересует: ");
-    Console.WriteLine("1) Студенты с долгами");
-    Console.WriteLine("2) Преподаватели 'с долгами'");
-    Console.WriteLine("3) Приказы");
-    Console.WriteLine("4) Список дисциплин преподавателя");
-    Console.WriteLine("5) Узнать курс студента/стаж работника учзаведения");
-    int main = Convert.ToInt32(Console.ReadLine());
-    switch (main)
-    {
-        case 1:
+// var s = new Student[] { Igor, Irka, Ivan }; 
+// var p = new Teachers[] { Bread, Belim, Kazich };
+// var workers = new Human[] { Svetka, Misha,Bread,Belim,Kazich };
+// while (true)
+// {
+//     Console.WriteLine("Пожалуйсте, выберете, что вас интересует: ");
+//     Console.WriteLine("1) Студенты с долгами");
+//     Console.WriteLine("2) Преподаватели 'с долгами'");
+//     Console.WriteLine("3) Приказы");
+//     Console.WriteLine("4) Список дисциплин преподавателя");
+//     Console.WriteLine("5) Узнать курс студента/стаж работника учзаведения");
+//     int main = Convert.ToInt32(Console.ReadLine());
+//     switch (main)
+//     {
+//         case 1:
             
-            for (int i = 0; i < s.Length; i++)
-            {
-                if (s[i].dolgi.Count != 0) Console.WriteLine($"Сейчас будем позорить студента по имени {s[i].surname}\nДолги на следующих предметов: ");
-                for (int j = 0; j < s[i].dolgi.Count; j++) Console.WriteLine(s[i].dolgi[j]);
-            }
-            break;
-        case 2:
+//             for (int i = 0; i < s.Length; i++)
+//             {
+//                 if (s[i].dolgi.Count != 0) Console.WriteLine($"Сейчас будем позорить студента по имени {s[i].surname}\nДолги на следующих предметов: ");
+//                 for (int j = 0; j < s[i].dolgi.Count; j++) Console.WriteLine(s[i].dolgi[j]);
+//             }
+//             break;
+//         case 2:
             
-            for (int i = 0; i < p.Length; i++)
-            {
-                Console.WriteLine($"У преподавателя {p[i].surname} следующие должники:");
-                foreach (var key in p[i].promisers.Keys)
-                {
-                    Console.WriteLine($"Должник по фамилии {key} имеет след. долги:");
-                    foreach (var v in p[i].promisers[key]) Console.WriteLine(v);
-                }
-            }
-            break;
-        case 3:
-            Console.WriteLine("Кому: \n1) общие,\n2) студентам,\n3) преподавателям,\n4) специальному персоналу,");
-            int n1 = Convert.ToInt32(Console.ReadLine());
-            switch(n1)
-            {
-                case 1:
-                    foreach (var r in Rulers.all.Keys)
-                    {
-                        Console.WriteLine($"От кого: {r}");
-                        foreach (var v in Rulers.all[r]) Console.WriteLine(v);
-                    }
-                    break;
-                case 2:
-                    foreach (var r in Rulers.students.Keys)
-                    {
-                        Console.WriteLine($"От кого: {r}");
-                        foreach (var v in Rulers.students[r]) Console.WriteLine(v);
-                    }
-                    break;
-                case 3:
-                    foreach (var r in Rulers.teachers.Keys)
-                    {
-                        Console.WriteLine($"От кого: {r}");
-                        foreach (var v in Rulers.teachers[r]) Console.WriteLine(v);
-                    }
-                    break;
-                case 4:
-                    foreach (var r in Rulers.special_workers.Keys)
-                    {
-                        Console.WriteLine($"От кого: {r}");
-                        foreach (var v in Rulers.special_workers[r]) Console.WriteLine(v);
-                    }
-                    break;
-            }
-            break;
-        case 4:
-            foreach(var prep in p)
-            {
-                Console.WriteLine($"Преподаватель {prep.surname} ведёт след. предметы: ");
-                foreach (var sub in prep.disciplines) Console.WriteLine(sub);
-            }
-            break;
-        case 5:
-            Console.WriteLine($"Студент?(да/нет)");
-            string ans = Console.ReadLine();
-            if (ans == "да") foreach (var stud in s) Console.WriteLine(($"{stud.surname} {stud.name}: {stud.Course}  курс"));
-            else foreach (var w in workers) Console.WriteLine($"{w.surname} {w.name}: {w.experience}  лет");
-            break;
-    }
-    Console.WriteLine();
-    Console.WriteLine("1) Вернуться к выборке");
-    Console.WriteLine("2) Завершить программу");
-    int c = Convert.ToInt32(Console.ReadLine());
-    if (c == 2) break;
-}
+//             for (int i = 0; i < p.Length; i++)
+//             {
+//                 Console.WriteLine($"У преподавателя {p[i].surname} следующие должники:");
+//                 foreach (var key in p[i].promisers.Keys)
+//                 {
+//                     Console.WriteLine($"Должник по фамилии {key} имеет след. долги:");
+//                     foreach (var v in p[i].promisers[key]) Console.WriteLine(v);
+//                 }
+//             }
+//             break;
+//         case 3:
+//             Console.WriteLine("Кому: \n1) общие,\n2) студентам,\n3) преподавателям,\n4) специальному персоналу,");
+//             int n1 = Convert.ToInt32(Console.ReadLine());
+//             switch(n1)
+//             {
+//                 case 1:
+//                     foreach (var r in Rulers.all.Keys)
+//                     {
+//                         Console.WriteLine($"От кого: {r}");
+//                         foreach (var v in Rulers.all[r]) Console.WriteLine(v);
+//                     }
+//                     break;
+//                 case 2:
+//                     foreach (var r in Rulers.students.Keys)
+//                     {
+//                         Console.WriteLine($"От кого: {r}");
+//                         foreach (var v in Rulers.students[r]) Console.WriteLine(v);
+//                     }
+//                     break;
+//                 case 3:
+//                     foreach (var r in Rulers.teachers.Keys)
+//                     {
+//                         Console.WriteLine($"От кого: {r}");
+//                         foreach (var v in Rulers.teachers[r]) Console.WriteLine(v);
+//                     }
+//                     break;
+//                 case 4:
+//                     foreach (var r in Rulers.special_workers.Keys)
+//                     {
+//                         Console.WriteLine($"От кого: {r}");
+//                         foreach (var v in Rulers.special_workers[r]) Console.WriteLine(v);
+//                     }
+//                     break;
+//             }
+//             break;
+//         case 4:
+//             foreach(var prep in p)
+//             {
+//                 Console.WriteLine($"Преподаватель {prep.surname} ведёт след. предметы: ");
+//                 foreach (var sub in prep.disciplines) Console.WriteLine(sub);
+//             }
+//             break;
+//         case 5:
+//             Console.WriteLine($"Студент?(да/нет)");
+//             string ans = Console.ReadLine();
+//             if (ans == "да") foreach (var stud in s) Console.WriteLine(($"{stud.surname} {stud.name}: {stud.Course}  курс"));
+//             else foreach (var w in workers) Console.WriteLine($"{w.surname} {w.name}: {w.experience}  лет");
+//             break;
+//     }
+//     Console.WriteLine();
+//     Console.WriteLine("1) Вернуться к выборке");
+//     Console.WriteLine("2) Завершить программу");
+//     int c = Convert.ToInt32(Console.ReadLine());
+//     if (c == 2) break;
+// }
 
 
 
@@ -187,68 +191,68 @@ while (true)
 
 
 
-class Human
-{
-    public string name = "not stated";
-    public string surname = "not stated";
-    public string patronymic = "not stated";
-    public int salary;
-    public string educ = "not stated";
-    private string gender = "not stated";
-    public int experience;
-    public string Gender
-    {
-        get {return gender;}
-        set {
-            if (value == "male" || value == "female") gender = value;
-            else Console.WriteLine("Значение не присвоено, вводите в формате 'male'/'female'");}
-    }
-    public void inf()
-    {
-        Console.WriteLine($"Имя: {name}, фамилия: {surname}, образование: {educ}");
-    }
-}
-class Student: Human
-{
-    public Dictionary<string, string> zachetka = new Dictionary<string, string>();
-    public List<string> dolgi = new  List<string>();
-    private int course;
+// class Human
+// {
+//     public string name = "not stated";
+//     public string surname = "not stated";
+//     public string patronymic = "not stated";
+//     public int salary;
+//     public string educ = "not stated";
+//     private string gender = "not stated";
+//     public int experience;
+//     public string Gender
+//     {
+//         get {return gender;}
+//         set {
+//             if (value == "male" || value == "female") gender = value;
+//             else Console.WriteLine("Значение не присвоено, вводите в формате 'male'/'female'");}
+//     }
+//     public void inf()
+//     {
+//         Console.WriteLine($"Имя: {name}, фамилия: {surname}, образование: {educ}");
+//     }
+// }
+// class Student: Human
+// {
+//     public Dictionary<string, string> zachetka = new Dictionary<string, string>();
+//     public List<string> dolgi = new  List<string>();
+//     private int course;
 
-    public int Course
-    {
-        set { if (1 <= value || value <= 5) course = value; }
-        get { return course;}
-    }
-}
-class Teachers : Human
-{
-    public List<string> disciplines = new List<string>();
-    public Dictionary<string, List<string>> promisers = new Dictionary<string, List<string>>();
+//     public int Course
+//     {
+//         set { if (1 <= value || value <= 5) course = value; }
+//         get { return course;}
+//     }
+// }
+// class Teachers : Human
+// {
+//     public List<string> disciplines = new List<string>();
+//     public Dictionary<string, List<string>> promisers = new Dictionary<string, List<string>>();
 
-}
-class Special_Workers: Human
-{
-    public void Service_in_Cafe(string student_name, string food)
-    {
-        Console.WriteLine($"{name} продаёт {food} студенту по имени {student_name}");
-    }
-    public void To_Wash_Floor(int stage)
-    {
-        Console.WriteLine($"{name} моет пол на этаже номер {stage}");
-    }
-    public void Fix(int stage, string broken)
-    {
-        Console.WriteLine($"{name} чинит {broken} на этаже номер {stage}");
-    }
-}
-class Rulers : Human
-{
-    public string post;
-    static public Dictionary<string, List<string>> all = new Dictionary<string, List<string>>();
-    static public Dictionary<string, List<string>> students = new Dictionary<string, List<string>>();
-    static public Dictionary<string, List<string>> special_workers = new Dictionary<string, List<string>>();
-    static public Dictionary<string, List<string>> teachers = new Dictionary<string, List<string>>();
-}
+// }
+// class Special_Workers: Human
+// {
+//     public void Service_in_Cafe(string student_name, string food)
+//     {
+//         Console.WriteLine($"{name} продаёт {food} студенту по имени {student_name}");
+//     }
+//     public void To_Wash_Floor(int stage)
+//     {
+//         Console.WriteLine($"{name} моет пол на этаже номер {stage}");
+//     }
+//     public void Fix(int stage, string broken)
+//     {
+//         Console.WriteLine($"{name} чинит {broken} на этаже номер {stage}");
+//     }
+// }
+// class Rulers : Human
+// {
+//     public string post;
+//     static public Dictionary<string, List<string>> all = new Dictionary<string, List<string>>();
+//     static public Dictionary<string, List<string>> students = new Dictionary<string, List<string>>();
+//     static public Dictionary<string, List<string>> special_workers = new Dictionary<string, List<string>>();
+//     static public Dictionary<string, List<string>> teachers = new Dictionary<string, List<string>>();
+// }
 
 
 // Console.WriteLine("кол-во книг: ");
