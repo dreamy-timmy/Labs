@@ -1,8 +1,55 @@
 
+// Обобщения:
+// Реализовать обобщенный класс, который позволяет хранить в массиве объекты любого типа. 
+//В данном классе определить методы для добавления данных в массив, удаления из массива, получения элемента из массива по индексу.
+// Written with Max
+
+Massiv<string> mass = new Massiv<string>(5);
+mass.Set("aboba", 0);
+
+Console.WriteLine(mass.Get(0));
+mass.Remove(0);
+
+Console.WriteLine(mass.Get(0));
+
+Massiv<int> massiv2 = new Massiv<int>(2);
+massiv2.Set(12435, 0);
+massiv2.Set(-134, 1);
+massiv2.Print();
+massiv2.Remove(0);
+massiv2.Print();
+
+class Massiv<T>
+{
+    T[] ar;
+    
+    public Massiv(int length) 
+    { 
+        this.ar = new T[length];
+    }
+    public void Set (T el, int index)
+    {
+        ar[index] = el;
+    }
+    public T Get(int index)
+    {
+        return ar[index];
+    }
+    public void Remove(int index)
+    {
+        ar[index] = default(T);
+    }
+    public void Print()
+    {
+        foreach(T el in ar)
+        {
+            Console.Write(el + " ");
+        }
+        Console.WriteLine();
+    }
+};
 
 
-
-//!!!как можно проще
 
 // Teachers Kazich = new Teachers() 
 // { 
@@ -449,141 +496,4 @@
 // }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//FileInfo f = new FileInfo(@"C:\Users\Тимофей\source\repos\ConsoleApp1\ConsoleApp1\testing.txt");
-
-//StreamWriter sw = f.AppendText();
-//sw.WriteLine("Строка 1");
-//sw.WriteLine("Строка 2");
-//sw.WriteLine("Строка 3");
-//sw.Close();
-
-//StreamReader sr =  f.OpenText();
-//string s = sr.ReadLine();
-//while (s != null)
-//{
-//    Console.WriteLine(s);
-//    s = sr.ReadLine();
-//}
-//11.11.22 лаба
-//массив m*n
-//Необходимо отсортировать столбцы по убыванию произведений полож эл столбцов (sort запрещён)
-/*
- 3 3   - 3   3
- 4 12  - 12  4
- */
-//int[,] m = new int[Convert.ToInt32(Console.ReadLine()), Convert.ToInt32(Console.ReadLine())];
-//for (int i = 0; i < m.GetLength(0); i++)
-//    for (int j = 0; j < m.GetLength(0); j++)
-//        m[i, j] = Convert.ToInt32(Console.ReadLine());
-
-//int[,] curr = new int[m.GetLength(0), m.GetLength(1)];
-//for (int i = 0; i <)
-
-
-
-/******************************************************************************
-массив n*m(лаба - доделать)
-необходимо определить номера пар столбцов, которые содержат одни и те же элементы
-2 0
-1 2
-0 1
-
-0 1 1
-0 0 2
-
-1 1 1
-1 2 0
-если есть "0":
-кол-во "0" == в массиве:
-0 0 2 2 -4,4
-0 0 3 1 -4,
-*******************************************************************************/
-//using System;
-//class HelloWorld
-//{
-//    static void Main()
-//    {
-//        int n = Convert.ToInt32(Console.ReadLine()), m = Convert.ToInt32(Console.ReadLine());
-//        int c0 = 0;
-//        int[,] s = new int[n, m];
-//        int[] zero = new int[m];
-//        int[] sm = new int[m];
-//        int[] umn = new int[m];
-//        for (int i = 0; i < n; i++)
-//        {
-//            for (int j = 0; j < m; j++)
-//            {
-//                s[i, j] = Convert.ToInt32(Console.ReadLine());
-//            }
-//        }
-//        Console.WriteLine();
-//        for (int i = 0; i < n; i++)
-//        {
-//            for (int j = 0; j < m; j++)
-//            {
-//                Console.Write(s[i, j] + " ");
-//            }
-//            Console.WriteLine();
-//        }
-//        //ищем 0
-//        for (int i = 0; i < n; i++)
-//        {
-//            for (int j = 0; j < m; j++)
-//            {
-//                if (s[i, j] == 0)
-//                    zero[j]++;
-//            }
-//        }
-//        for(int j =0;j < zero.Length;j++)
-//        {
-//            for(int k = j+1;k<zero.Length ;k++)
-//            {
-//                if(zero[j] == zero[k])
-
-//                {
-//                    if (sm[j] == 0 && umn[j] == 0)
-//                    {
-//                        for (int g = 0; g < n; g++)
-//                        {
-//                            if (s[g, j] != 0)
-//                            {
-//                                sm[j] += s[g, j];
-//                                umn[j] += s[g, j];
-//                            }
-//                        }
-//                    }
-//                    if (sm[k] == 0 && umn[k] == 0)
-//                    {
-//                        for (int g = 0; g < n; g++)
-//                        {
-//                            if (s[g, k] != 0)
-//                            {
-//                                sm[k] += s[g, k];
-//                                umn[k] += s[g, k];
-//                            }
-//                        } 
-//                    }
-
-//                    if (sm[k] == sm[j] && umn[k] == umn[j])
-//                        Console.WriteLine($"номера пар столбцов, которые содержат одни и те же элементы: {j+1} {k+1}");
-//                }
-//            }
-//        }
-//    }
-//}
 
