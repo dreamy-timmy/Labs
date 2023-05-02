@@ -1,3 +1,58 @@
+//Необходимо написать программу, 
+//которая будет иметь список делегатов для мат операций(+,-,*, /), пользователь должен иметь возможность выбрать 
+//операцию и ввести два числа, после этого программа должна вызвать соответствующий делегат и вывести значение. 
+//При этом в программе должен присутствовать интерфейс IMath, который будет содержать методы для всех 4 мат операций. 
+//(Сколько пар: 1)
+
+using System;
+
+Console.WriteLine("Выберите мат операцию, которую хотите использовать: ");
+Console.WriteLine("1) +\n2) -\n3) /\n4) *");
+int n = Convert.ToInt32(Console.ReadLine());
+Operation operation = IMath.Add;
+Console.WriteLine("Введите два числа: ");
+double x = Convert.ToDouble(Console.ReadLine()), y = Convert.ToDouble(Console.ReadLine());
+
+switch (n)
+{
+    case 1:
+        operation = IMath.Add;
+        break;
+    case 2:
+        operation = IMath.Subtract;
+        break;
+    case 3:
+        operation = IMath.Divide;
+        break;
+    case 4:
+        operation = IMath.Multiply;
+        break;
+}
+Console.WriteLine(operation(x, y));
+
+delegate double Operation(double x, double y);
+interface IMath
+{
+    static double Add(double x, double y)
+    {
+        return x + y;
+    }
+    static double Subtract(double x, double y)
+    {
+        return x - y;
+    }
+    static double Multiply(double x, double y)
+    {
+        return x * y;
+    }
+    static double Divide(double x, double y)
+    {
+        return x / y;
+    }
+}
+
+
+
 /*
 1)коллекции, которые реализуем:
 для каждой коллекции будет отдельная менюшка для каждого с методами
