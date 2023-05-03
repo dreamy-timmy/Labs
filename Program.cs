@@ -1,3 +1,43 @@
+//Необходимо разработать программу, которая включает класс автомобиль, гараж и мойка. 
+//Гараж будет является коллекцией машин. Мойка может только мыть машину. Необходимо делегировать мытью всех машин.
+
+List<Auto> cars = new List<Auto>();
+
+Auto auto1 = new Auto("Ford", "2000");
+Auto auto2 = new Auto("Lada", "2004");
+Auto auto3 = new Auto("Jeep", "2003");
+
+cars.Add(auto1);
+cars.Add(auto2);
+cars.Add(auto3);
+
+Car_Wash washing = Auto.Clean;
+foreach (Auto car in cars)
+{
+    washing(car.Model);    
+}
+
+delegate void Car_Wash(string n);
+class Auto
+{
+    string model;
+    string year;
+    public string Model
+    {
+        get => model;
+    }
+    public Auto(string m, string y)
+    {
+        model = m;
+        year = y;
+    }
+
+    public static void Clean(string m)
+    {
+        Console.WriteLine($"{m} сейчас находится на мойке");
+    }
+}
+
 //Необходимо написать программу, 
 //которая будет иметь список делегатов для мат операций(+,-,*, /), пользователь должен иметь возможность выбрать 
 //операцию и ввести два числа, после этого программа должна вызвать соответствующий делегат и вывести значение. 
