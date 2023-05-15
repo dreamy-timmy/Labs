@@ -1,3 +1,40 @@
+// Реализовать автоматическое управление списком вызовов обработчиком событий(events) операций: *,/,+,-
+
+Calculator.Calculate(10, 5);
+
+class Calculator
+{
+    static void DivideHandler(int a, int b)
+    {
+        Console.WriteLine("{0} / {1} = {2}", a, b, a / b);
+    }
+    static void MultiplyHandler(int a, int b)
+    {
+        Console.WriteLine("{0} * {1} = {2}", a, b, a * b);
+    }
+    static void AddHandler(int a, int b)
+    {
+        Console.WriteLine("{0} + {1} = {2}", a, b, a + b);
+    }
+    static void SubtractHandler(int a, int b)
+    {
+        Console.WriteLine("{0} - {1} = {2}", a, b, a - b);
+    }
+    public delegate void CalculatorEventHandler(int a, int b);
+    static CalculatorEventHandler[] handler =  {MultiplyHandler, DivideHandler, AddHandler,SubtractHandler} ;
+    public static void Calculate(int a, int b)
+    {
+        foreach (var evt in handler)
+        {
+            evt?.Invoke(a, b);
+        }
+    }
+}
+
+
+
+
+
 //Необходимо разработать программу, которая включает класс автомобиль, гараж и мойка. 
 //Гараж будет является коллекцией машин. Мойка может только мыть машину. Необходимо делегировать мытью всех машин.
 
