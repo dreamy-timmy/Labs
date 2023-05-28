@@ -1,3 +1,22 @@
+//всё запросами, есть массив необходимо определить сумму положительных, 
+//произв ненуль, кол-во четных, изменить массив удалив все нечётные элементы
+int[] digits = {-1,2,3,-5,7,-8,9};
+Console.Write("исходный массив: ");
+foreach (var i in digits) Console.Write(i+" ");
+Console.WriteLine();
+var positive_sum = from d in digits
+                     where d > 0
+                     select d;
+Console.WriteLine($"сумма положительных: {positive_sum.Sum()}");
+var even_only = from d in digits
+                where d % 2 == 0
+                select d;
+Console.Write("только чётные: ");
+foreach (var i in even_only) Console.Write(i + " ");
+Console.WriteLine();
+
+
+
 // Реализовать автоматическое управление списком вызовов обработчиком событий(events) операций: *,/,+,-
 
 Calculator.Calculate(10, 5);
