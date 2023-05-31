@@ -1,3 +1,106 @@
+//Два класса, описание машин, в классе машин, поля: id, colour, mark.
+//2-ой класс: id машины, владельцы: ФИО.
+//С использованием запросов необходимо выполнить отбор машин по опред марке, 
+//сгруппировать владельцев по id (машинка - все владельцы). Методы или чистые запросы- нам решать
+
+Car car1 = new Car(1, "red", "toyota");
+Car car2 = new Car(2, "white", "chevrolet");
+Car car3 = new Car(3, "black", "toyota");
+Owners tom = new Owners(2,new string[] {"Том","Томыч","Томов"});
+Owners sam = new Owners(2,new string[] {"Сэм","Сэмыч","Сэмычев"});
+Owners tim = new Owners(1,new string[] {"Тим","Тимыч","Тимов"});
+ 
+var cars = new List<Car> { car1,car2,car3 };
+var owners = new List<Owners> {tom, sam, tim};
+
+var toyotas = from i in cars
+ where i.Mark == "toyota" 
+ select i;
+string mark = "";
+
+Console.WriteLine("все машины toyota: ");
+foreach (var t in toyotas)
+{
+ Console.WriteLine(t.Id+" "+t.Color);
+}
+var mark_owners = from owner in owners
+ group owner by owner.Id;
+foreach (var ow in mark_owners)
+{
+ foreach (var c in cars)
+ {
+  if (c.Id == ow.Key)
+  {
+   mark = c.Mark;
+   break;
+  }
+ }
+ Console.WriteLine($"марка: {mark}");
+ Console.WriteLine($"владельцы: ");
+ foreach (var o in ow)
+ {
+  foreach (var x in o.Name)
+  {
+   Console.WriteLine(x); 
+  }
+ }
+ Console.WriteLine();
+}
+
+class Owners
+{
+ private int id;
+ private string[] name = new string[3];
+
+ public int Id
+ {
+  get
+  { 
+   return id;
+  }
+ }
+
+ public string[] Name
+ {
+  get { return name; }
+ }
+ 
+ public Owners( int id, string[] name)
+ {
+  this.id = id;
+  this.name = name;
+ }
+}
+
+class Car
+{
+ int id;
+ string color;
+ string mark;
+ public string Mark
+ {
+  get { return mark; }
+ }
+ public string Color
+ {
+  get { return color; }
+ }
+ public int Id
+ {
+  get { return id; }
+ }
+ public Car(int id, string color, string mark)
+ {
+  this.id = id;
+  this.color = color;
+  this.mark = mark;
+ }
+}
+
+
+
+
+
 //всё запросами, есть массив необходимо определить сумму положительных, 
 //произв ненуль, кол-во четных, изменить массив удалив все нечётные элементы
 int[] digits = {-1,2,3,-5,7,-8,9};
