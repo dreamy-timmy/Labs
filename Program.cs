@@ -1,3 +1,149 @@
+// --------------------------------------ПРОВЕРЯЙТЕ ДО СЛЕДУЮЩЕГО ТИРЕ -------------------------------------------------------------
+
+//всё запросами, есть массив необходимо определить сумму положительных, 
+//произв ненуль, кол-во четных, изменить массив удалив все нечётные элементы и повторить запросы
+// *
+List<int> digits = new List<int>(){-1,2,3,-5,7,-8,9,0};
+Console.Write("исходный массив: ");
+foreach (var i in digits) Console.Write(i+" ");
+Console.WriteLine();
+
+Console.WriteLine("ДО УДАЛЕНИЯ НЕЧЁТНЫХ: ");
+Request(digits);
+
+//удаляем нечётные
+var to_delete = from d in digits
+    where Math.Abs(d) % 2 == 1
+    select d;
+Console.WriteLine();
+foreach (var x in to_delete.ToArray())
+{
+    digits.Remove(x);
+}
+
+foreach(var d in digits) Console.Write(d+" ");
+Console.WriteLine();
+
+Console.WriteLine("ПОСЛЕ УДАЛЕНИЯ: ");
+Request(digits);
+
+void Request(List<int> l)
+{
+    var positive_sum = from d in digits
+        where d > 0
+        select d;
+    Console.WriteLine($"сумма положительных: {positive_sum.Sum()}");
+    var even_only = from d in digits
+        where d % 2 == 0
+        select d;
+
+    var c = 0;
+    foreach (var i in even_only) c++;
+    Console.WriteLine($"количество чётных: {c}");
+    Console.WriteLine();
+
+    var except_zero = from digit in digits
+        where digit != 0
+        select digit;
+    var mult = 1;
+    foreach (var x in except_zero)
+    {
+        mult *= x;
+    }
+    Console.WriteLine($"произведение не нулевых: {mult}");
+}
+
+//Два класса, описание машин, в классе машин, поля: id, colour, mark.
+//2-ой класс: id машины, владельцы: ФИО.
+//С использованием запросов необходимо выполнить отбор машин по опред марке, 
+//сгруппировать владельцев по id (машинка - все владельцы). Методы или чистые запросы- нам решать
+
+
+
+Car car1 = new Car(1, "red", "toyota");
+Car car2 = new Car(2, "white", "chevrolet");
+Car car3 = new Car(3, "black", "toyota");
+
+Owners tom = new Owners(1,"Сэм");
+Owners sam = new Owners(2,"Том");
+Owners tim = new Owners(3,"Тима");
+Owners tom1 = new Owners(1,"Том");
+
+ 
+var cars = new List<Car> { car1,car2,car3 };
+var owners = new List<Owners> {tom, sam, tim, tom1};
+
+var toyotas = from i in cars
+ where i.Mark == "toyota" 
+ select i;
+var mark = "";
+
+Console.WriteLine("все машины toyota: ");
+foreach (var t in toyotas)
+{
+ Console.WriteLine(t.Id+" "+t.Color);
+}
+var mark_owners = from owner in owners
+ group owner by owner.Name;
+
+
+foreach (var ow in mark_owners)
+{
+ Console.WriteLine($"владелец: {ow.Key}");
+ foreach (var o in ow)
+ {
+  foreach (var c in cars)
+  {
+    if (c.Id == o.Id)
+    {
+     mark = c.Mark;
+     break;
+    } 
+  } 
+  Console.WriteLine($"марка: {mark}, id: {o.Id}");
+   
+ }
+ 
+ Console.WriteLine();
+}
+
+class Owners
+{
+ public int Id {get; set; }  
+
+ public string Name { get; set; }
+ 
+ public Owners( int id, string name)
+ {
+  this.Id = id;
+  this.Name = name;
+ }
+}
+
+class Car
+{
+ int id;
+ string color;
+ string mark;
+ public string Mark
+ {
+  get { return mark; }
+ }
+ public string Color
+ {
+  get { return color; }
+ }
+ public int Id
+ {
+  get { return id; }
+ }
+ public Car(int id, string color, string mark)
+ {
+  this.id = id;
+  this.color = color;
+  this.mark = mark;
+ }
+}
 // 2) Задачка для стека:
 // на вход подаётся строка, в которой могут присутствовать скобки 3-х типов: ),],}
 // Необходимо определить правильно ли расставлены скобки?(чтобы внутренние скобки закрывались раньше внешних)
@@ -52,7 +198,7 @@ Console.WriteLine(avg(1,2,3));
 
 delegate int Operation(int x, int y, int z);
 
-
+//------------------------------------------------------------------КОНЕЦ-------------------------------------------------------
 
 // три таблицы (id продукта, наименование), (id произв, наим. произв.), (id товара, id производителя, дата, кол-во)
 // группировка по дате ()
